@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="The CloSE Representation for folding clothes"
+    />
+    <meta name="keywords" content="Clothes, Representation, Manipulation, dGLI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CloSE</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+    <script
+      src="https://kit.fontawesome.com/e038779150.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <link rel="stylesheet" href="../css/academicons.min.css" />
+
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <link rel="stylesheet" href="./static/css/index.css" />
+    <link rel="icon" href="../img/webico.ico" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </head>
+  <body>
+    <style>
+      .grad_text {
+        background: -webkit-linear-gradient(right, #0039f5, #dedbd8, #ff8000);
+        -webkit-background-clip: text;
+        background-clip: text; /* Standard property for future compatibility */
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                CloSE: A Geometric Shape-Agnostic Cloth State Representation
+              </h1>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF Link. -->
+                  <span class="link-block">
+                    <a
+                      href="./media/Paper/paper.pdf"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a
+                      href="https://anonymous.4open.science/r/close-representation-4425/README.md"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code - To be updated</span>
+                    </a>
+                  </span>
+                  <!-- Dataset Link. -->
+                  <span class="link-block">
+                    <a
+                      href="media/dataset.zip"
+                      download="dataset.zip"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fa-solid fa-database"></i>
+                      </span>
+                      <span>Data</span>
+                    </a>
+                  </span>
+                <!-- Evaluation Images -->
+                  <span class="link-block">
+                      <!-- download="results.zip" Put this below href! -->
+                    <a
+                      href=""
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                       <i class="fa-solid fa-file-lines"></i>
+                      </span>
+                      <span>Results - Coming Soon</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Cloth manipulation is a difficult problem mainly
+                because of the non-rigid nature of cloth, which makes a good
+                representation of deformation essential. We present a new
+                representation for the deformation-state of clothes. First, we
+                propose the dGLI disk representation based on topological indices
+                computed for edge segments of the cloth border that are
+                arranged on a circular grid. The heat-map of the dGLI disk
+                uncovers patterns that correspond to features of the cloth state
+                that are consistent for different shapes, sizes or orientation of
+                the cloth. We then abstract these important features from the
+                dGLI disk into a circle, calling it the Cloth StatE representation
+                (CloSE). This representation is compact, continuous, and gen-
+                eral for different shapes. We show that this representation is
+                able to accurately predict the fold locations for several simula-
+                tion clothing datasets. Finally, we also show the strengths of this
+                representation in two relevant applications: semantic labeling
+                and high- and low-level planning. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--/ Abstract. -->
+    
+    <!-- Paper video. -->
+    <section class="section">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Video</h2>
+            <video controls preload>
+              <source src="./media/Video/Video_CloSE_ICRA26.mp4" , type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--/ Paper video. -->
+
+    <!-- Contributions -->
+    <section class="section">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <h4>Contributions:</h4>
+              <ul>
+                <li>
+                  We propose a new dGLI representation arranged in a disk instead of a matrix, the dGLI Disk.
+                  This representation unravels a hidden structure, and helps us detect folds on clothes of
+                  any shape.
+                </li>
+                <li>
+                  From the dGLI disk, we abstract out a very compact representation, CloSE, that generalizes to 
+                  any shape and pose of the cloth.
+                </li>
+                <li>
+                  We demonstrate the capabalities of our CloSE representation on two applications:
+                  <ol>
+                    <li>defining an automatic semantic description of the cloth state</li>
+                    <li>planning manipulation sequences</li>
+                  </ol>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- / Contributions -->
+
+    <!-- Visualizations -->
+    <section class="section">
+      <div class="container">
+        <h2 class="title is-3">The dGLI disk</h2>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <div class="content has-text-justified">
+              <p>
+                We present a few examples of the evolution of th dGLI disk 
+                with the state of the cloth. We visualize the cloth border alongside
+                the dGLI disk and the dGLI disk difference. The dGLI disk is the
+                proposed rearrangement of the dGLI Matrix. Notice a curve
+                appearing on the dGLI disk when the cloth is folded. This curve
+                is visible in isolation on the dGLI disk difference.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div id="dGLI_disk-carousel" class="carousel results-carousel">
+            <div class="item item-dGLI_disk_1">
+              <video poster="" id="dGLI_disk_1" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/Visualizations/bottomTopHalf_Tshirt_02_annotated.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-dGLI_disk_2">
+              <video poster="" id="dGLI_disk_2" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/Visualizations/diagonalHalf_napkin_01_annotated.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-dGLI_disk_3">
+              <video poster="" id="dGLI_disk_3" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/Visualizations/75half_disk_01_annotated.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-dGLI_disk_4">
+              <video poster="" id="dGLI_disk_4" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/Visualizations/half_tshirt_01_annotated.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-dGLI_disk_4">
+              <video poster="" id="dGLI_disk_4" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/Visualizations/50diagonalHalf_napkin_01_annotated.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-dGLI_disk_4">
+              <video poster="" id="dGLI_disk_4" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/Visualizations/75half_tshirt_01_annotated.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title is-3">Evaluations</h2>
+        <!-- Actual vs Predicted -->
+        <h3 class="title is-5">Ground Truth vs CloSE reconstruction</h3>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <div class="content has-text-justified">
+              <p>
+                Below we present a few examples of the ground truth cloth border along with
+                the predicted border from the CloSE representation. We estimate the CloSE 
+                representation from the given state of the cloth and fold the start state 
+                along the predictaed fold line. That is, reflect the border points on the 
+                folded side along the fold line. The folded border points and the fold line
+                is predicted by the CloSE representation. 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="comparison-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img
+            src="./media/gt_pred/50half_disk_01_annotated.png"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/50half_napkin_01_annotated.png"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/75diagonalHalf_napkin_01_annotated.png"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/75half_disk_01_annotated.png"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/75half_napkin_01_annotated.png"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/75half_tshirt_01_annotated.png"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/half_tshirt_01_annotated.png"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/diagonalHalf_napkin_01_annotated.png"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/diagonalHalf_napkin_02_annotated.png"
+            class="image"
+            />
+          </div>
+        </div>
+        <!-- / Actual vs Predicted -->
+      </div>
+    </section>
+
+    <!-- CloSE is continuous -->
+    <section class="section">
+      <div class="container">
+        <h3 class="title is-5">CloSE Representation in continuous</h3>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <div class="content has-text-justified">
+              <p>
+                We continuously move the fold location on the CloSE representation to observe
+                that the reconstructed cloth congiguration from the defined representation is also continuous.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div id="continuity-carousel" class="carousel results-carousel">
+            <div class="item item-cloth_1">
+              <video poster="" id="cloth_1" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/continuity/Cloth_1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-Tshirt_2">
+              <video poster="" id="Tshirt_2" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/continuity/Tshirt_2.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-cloth_2">
+              <video poster="" id="cloth_2" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/continuity/Cloth_2.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-Tshirt_3">
+              <video poster="" id="Tshirt_3" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/continuity/Tshirt_3.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-cloth_3">
+              <video poster="" id="cloth_3" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/continuity/Cloth_3.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-Tshirt_1">
+              <video poster="" id="Tshirt_1" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/continuity/Tshirt_1.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Semantic Labelling -->
+    <section class="section">
+      <div class="container">
+        <h2 class="title is-3">Applications</h2>
+        <h3 class="title is-5">Semantic Labelling</h3>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <div class="content has-text-justified">
+              <p>
+                By just using the CloSE representation we can naturally give semantic labels to 
+                the state of the cloth. Hover over the image to see the Semantic Label.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="semantic-labelling-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img
+              src="./media/SemanticLabelling/bottomTopHalf_Tshirt_03_semantic.png"
+              class="image"
+            />
+            <div class="overlay">
+              Cloth has 8 corners<br>
+              Corners {1,8} are folded<br>
+              Side 12 is 59.7% folded<br>
+              Side 78 is 59.5% folded
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="./media/SemanticLabelling/diagonalHalf_napkin_02_semantic.png"
+              class="image"
+            />
+            <div class="overlay">
+              Cloth has 4 corners<br>
+              Corners {4} are folded<br>
+              Diagonally folded in half<br>
+              Corner is 97% folded
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="./media/SemanticLabelling/half_disk_01_semantic.png"
+              class="image"
+            />
+            <div class="overlay">
+              Cloth is circular<br>
+              Cloth is folded in half<br>
+              Cloth is 52.8% folded
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="./media/SemanticLabelling/half_pants_01_semantic.png"
+              class="image"
+            />
+            <div class="overlay">
+              Cloth has 8 corners<br>
+              Corners {1,6,7,8} are folded<br>
+              Cloth is folded in half<br>
+              Side 12 is 52.1% folded<br>
+              Side 56 is 53% folded
+            </div>
+          </div>
+          <div class="item">
+            <img
+            src="./media/SemanticLabelling/half_tshirt_01_semantic.png"
+            class="image"
+            />
+            <div class="overlay">
+              Cloth has 8 corners<br>
+              Corners {1,6,7,8} are folded<br>
+              Cloth is folded in half<br>
+              Side 45 is 49.9% folded<br>
+              Side 81 is 47.2% folded
+            </div>
+          </div>
+          <div class="item">
+            <img
+            src="./media/SemanticLabelling/notHalf_napkin_01_semantic.png"
+            class="image"
+            />
+            <div class="overlay">
+              Cloth has 4 corners<br>
+              Corners {2,3} are folded<br>
+              Cloth is folded in half-askew<br>
+              Side 12 is 39.4% folded<br>
+              Side 34 is 61.8% folded
+            </div>
+          </div>
+          <div class="item">
+            <img
+            src="./media/SemanticLabelling/50diagonalHalf_napkin_01_semantic.png"
+            class="image"
+            />
+            <div class="overlay">
+              Cloth has 4 corners<br>
+              Corners {4} are folded<br>
+              Corner is 41.9% folded
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planning -->
+    <section class="section">
+      <div class="container">
+        <h3 class="title is-5">Planning with CloSE representation</h3>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <div class="content has-text-justified">
+              <p>
+                High-level planning: Since the CloSE representation tracks the folds,
+                it can reason over its current state and plan the high-level
+                intermediate states. That is, just 2 cases in case of a single fold.
+                <ul>
+                  <li>Case 1: Start and the Goal are in the same semantic region</li>
+                  <li>Case 2: Start and the Goal are in different semantic regions</li>
+                </ul>
+                In case 1, we directly move to the goal configuration, and in case 2,
+                we first unfold the cloth and then fold along the desired fold line.
+              </p>
+              <p>
+                Low-level planning (planning the pick and place locations): Here we 
+                predict which corners to grab ad where to place them. 
+                We pick at max 2 corners from the folded side such that the area of the trepazoid 
+                formed by the fold points with the chosen corners is maximum. 
+                The locations for placing the grabbed points can be calculated
+                by reflecting the folded points along the fold line. We perform this operation 
+                twice, once for each fold, in the case of same semantic region fold to get the 
+                final place location.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="planning-carousel" class="carousel results-carousel">
+          <div class="item item-Tshirt_1">
+            <video poster="" id="Tshirt_1" autoplay controls muted loop playsinline height="100%">
+              <source src="./media/Planning/Planning_Case_1.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-cloth_1">
+            <video poster="" id="cloth_1" autoplay controls muted loop playsinline height="100%">
+              <source src="./media/Planning/Planning_Case_2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website template is borrowed from
+              <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a
+              >.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+    <script>
+      bulmaCarousel.attach("#dGLI_disk-carousel", {
+        slidesToScroll: 1,
+        slidesToShow: 3,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        infinite: true,
+      });
+      bulmaCarousel.attach("#comparison-carousel", {
+        slidesToScroll: 1,
+        slidesToShow: 3,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        infinite: true,
+      });
+      bulmaCarousel.attach("#continuity-carousel", {
+        slidesToScroll: 1,
+        slidesToShow: 3,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        infinite: true,
+      });
+      bulmaCarousel.attach("#semantic-labelling-carousel", {
+        slidesToScroll: 1,
+        slidesToShow: 3,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        infinite: true,
+      });
+      bulmaCarousel.attach("#planning-carousel", {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        autoplay: true,
+        autoplaySpeed: 20000,
+        infinite: true,
+      });
+    </script>
+  </body>
+</html>
