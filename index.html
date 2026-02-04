@@ -92,20 +92,19 @@
                   </span>
                   <span class="link-block">
                     <a
-                      href="https://anonymous.4open.science/r/close-representation-4425/README.md"
+                      href="" //"https://anonymous.4open.science/r/close-representation-4425/README.md"
                       class="external-link button is-normal is-rounded is-dark"
                     >
                       <span class="icon">
                         <i class="fab fa-github"></i>
                       </span>
-                      <span>Code - To be updated</span>
+                      <span>Code (Coming Soon)</span>
                     </a>
                   </span>
                   <!-- Dataset Link. -->
                   <span class="link-block">
                     <a
-                      href="media/dataset.zip"
-                      download="dataset.zip"
+                      href="https://huggingface.co/datasets/anonymousresearcher217/CloSE-representation/tree/main"
                       class="external-link button is-normal is-rounded is-dark"
                     >
                       <span class="icon">
@@ -118,13 +117,13 @@
                   <span class="link-block">
                       <!-- download="results.zip" Put this below href! -->
                     <a
-                      href=""
+                      href="results_zips.html"
                       class="external-link button is-normal is-rounded is-dark"
                     >
                       <span class="icon">
                        <i class="fa-solid fa-file-lines"></i>
                       </span>
-                      <span>Results - Coming Soon</span>
+                      <span>Results</span>
                     </a>
                   </span>
                 </div>
@@ -154,10 +153,10 @@
                 that are consistent for different shapes, sizes or orientation of
                 the cloth. We then abstract these important features from the
                 dGLI disk into a circle, calling it the Cloth StatE representation
-                (CloSE). This representation is compact, continuous, and gen-
-                eral for different shapes. We show that this representation is
-                able to accurately predict the fold locations for several simula-
-                tion clothing datasets. Finally, we also show the strengths of this
+                (CloSE). This representation is compact, continuous, and general 
+                for different shapes. We show that this representation is
+                able to accurately predict the fold locations for several simulation
+                clothing datasets. Finally, we also show the strengths of this
                 representation in two relevant applications: semantic labeling
                 and high- and low-level planning. 
               </p>
@@ -286,11 +285,11 @@
             <div class="content has-text-justified">
               <p>
                 Below we present a few examples of the ground truth cloth border along with
-                the predicted border from the CloSE representation. We estimate the CloSE 
+                the estimated border from the CloSE representation. We calculate the CloSE 
                 representation from the given state of the cloth and fold the start state 
-                along the predictaed fold line. That is, reflect the border points on the 
+                along the estimated fold line. That is, reflect the border points on the 
                 folded side along the fold line. The folded border points and the fold line
-                is predicted by the CloSE representation. 
+                is estimated by the CloSE representation. 
               </p>
             </div>
           </div>
@@ -298,57 +297,72 @@
         <div id="comparison-carousel" class="carousel results-carousel">
           <div class="item">
             <img
-            src="./media/gt_pred/50half_disk_01_annotated.png"
+            src="./media/Eval/04731_Tshirt_000609_grid.png"
             class="image"
             />
           </div>
           <div class="item">
             <img
-            src="./media/gt_pred/50half_napkin_01_annotated.png"
+            src="./media/Eval/75half_tshirt_01_grid.png"
             class="image"
             />
           </div>
           <div class="item">
             <img
-            src="./media/gt_pred/75diagonalHalf_napkin_01_annotated.png"
+            src="./media/Eval/1_grid.png"
             class="image"
             />
           </div>
           <div class="item">
             <img
-            src="./media/gt_pred/75half_disk_01_annotated.png"
+            src="./media/Eval/00034_Trousers_000006_grid.png"
             class="image"
             />
           </div>
           <div class="item">
             <img
-            src="./media/gt_pred/75half_napkin_01_annotated.png"
+            src="./media/Eval/100_grid.png"
             class="image"
             />
           </div>
           <div class="item">
             <img
-            src="./media/gt_pred/75half_tshirt_01_annotated.png"
+            src="./media/Eval/100_grid.png"
             class="image"
             />
           </div>
           <div class="item">
             <img
-            src="./media/gt_pred/half_tshirt_01_annotated.png"
+            src="./media/Eval/diagonalHalf_napkin_01_grid.png"
             class="image"
             />
           </div>
           <div class="item">
             <img
-            src="./media/gt_pred/diagonalHalf_napkin_01_annotated.png"
+            src="./media/Eval/half_tshirt_01_grid.png"
             class="image"
             />
           </div>
           <div class="item">
             <img
-            src="./media/gt_pred/diagonalHalf_napkin_02_annotated.png"
+            src="./media/Eval/00628_Skirt_000049_grid.png"
             class="image"
             />
+          </div>
+          <div class="item">
+            <img
+            src="./media/Eval/06152_Trousers_001239_grid.png"
+            class="image"
+            />
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <div class="content has-text-justified">
+              <p>
+                More examples for the different datasets we evaluated can be found <a href="./results_zips.html">here</a>.
+              </p>
+            </div>
           </div>
         </div>
         <!-- / Actual vs Predicted -->
@@ -489,7 +503,7 @@
               Side 81 is 47.2% folded
             </div>
           </div>
-          <div class="item">
+          <!-- <div class="item">
             <img
             src="./media/SemanticLabelling/notHalf_napkin_01_semantic.png"
             class="image"
@@ -501,7 +515,7 @@
               Side 12 is 39.4% folded<br>
               Side 34 is 61.8% folded
             </div>
-          </div>
+          </div> -->
           <div class="item">
             <img
             src="./media/SemanticLabelling/50diagonalHalf_napkin_01_semantic.png"
@@ -589,7 +603,7 @@
       });
       bulmaCarousel.attach("#comparison-carousel", {
         slidesToScroll: 1,
-        slidesToShow: 3,
+        slidesToShow: 2,
         autoplay: true,
         autoplaySpeed: 10000,
         infinite: true,
